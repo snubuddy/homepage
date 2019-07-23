@@ -1,0 +1,44 @@
+.toolbar {
+	padding: 8px 32px;
+
+	background: #1d1d1d;
+	display: flex;
+	align-items: center;
+}
+
+.toolbar__title {
+	flex-grow: 1;
+
+	color: #ffffff;
+
+	margin: 0;
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.toolbar-list {
+	margin: 0;
+	padding: 0;	
+
+	list-style: none;
+
+	display: flex;
+	align-items: center;
+
+	border-right: 1px solid #ffffff;
+
+}
+
+.toolbar-list__item {
+	flex-shrink: 0;
+	padding: 0 8px;
+
+	box-sizing: border-box;
+
+	border-left: 1px solid #ffffff;
+}
+
+.toolbar-list__link {
+	text-decoration: none;
+	color: #ffffff;
+}
