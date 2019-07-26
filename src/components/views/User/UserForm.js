@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DatePicker from 'components/molecules/DatePicker'
 
 const FormContent = (props) => {
 	let optional = (props.optional === undefined) ? false : props.optional
@@ -57,8 +58,9 @@ class UserForm extends Component{
 					<FormContent 
 						label="Gender"
 					/>
-					<FormContent
+					<FormSpecial
 						label="Birth"
+						content={(<DatePicker />)}
 					/>
 					<FormContent
 						label="Country"
