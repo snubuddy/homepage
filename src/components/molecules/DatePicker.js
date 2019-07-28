@@ -23,10 +23,21 @@ const IntegerSelector = (props) => {
 
 class DatePicker extends Component {
 	state={
-		selected: moment().subtract(19, 'years').month(0).date(1),
 		year: moment().year() - 19,
 		month: 1,
 		date: 1,
+	}
+
+	constructor(props) {
+		super(props)
+		let _initial = (props.value === "" || props.value === undefined) 
+			? {year: moment().year() - 19, month: 1, date: 1}
+			: {
+					year: props.value.substring(0, 4),
+					month: props.value.substring(5, 7),
+					date: props.value.substring(8, 10)
+				}
+		this.state = _initial
 	}
 
 	range = (offset, range) => {
@@ -48,49 +59,26 @@ class DatePicker extends Component {
 		return this.range(1, maxDate) 
 	}
 
+	formatDate = () => {
+		return moment([this.state.year, this.state.month-1, this.state.date])
+			.format('YYYY-MM-DD')
+	}
+
 	onChangeYear = (e) => {
-		this.setState({year: e.target.value})
-		this.props.stateUpdate(
-			moment([
-				e.target.value,
-				this.state.month - 1,
-				this.state.date
-			])
-		)
+		this.setState({year: e.target.value}, 
+			() => this.props.onChange(this.formatDate()))
 	}
 
 	onChangeMonth = (e) => {
-		this.setState({month: e.target.value})
-		this.props.stateUpdate(
-			moment([
-				this.state.year,
-				e.target.value - 1,
-				this.state.date
-			])
-		)
+		this.setState({month: e.target.value},
+			() => this.props.onChange(this.formatDate()))
 	}	
 	
 	onChangeDate = (e) => {
-		this.setState({date: e.target.value})
-		this.props.stateUpdate(
-			moment([
-				this.state.year,
-				this.state.month - 1,
-				e.target.value
-			])
-		)
-	}	
-	
-	onChangeWrapper = (e, func) => {
-		func(e)
-		this.props.stateUpdate(
-			moment([
-				this.state.year,
-				this.state.month,
-				this.state.date
-			])
-		)
-	}
+		console.log(e.target.value)
+		this.setState({date: e.target.value},
+			() => {this.props.onChange(this.formatDate()); console.log(this.state)})	
+	}		
 
 	render() {
 		return (
@@ -119,7 +107,7 @@ class DatePicker extends Component {
 }
 
 DatePicker.defaultProps = {
-	stateUpdate: (e) => {}
+	onChange: (e) => {console.log(e)}
 }
 
 export default DatePicker
