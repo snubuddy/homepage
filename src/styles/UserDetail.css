@@ -1,0 +1,40 @@
+.user-detail {
+	width: 100%;
+}
+
+.user-detail-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.user-detail-card {
+	display: flex;
+	
+	padding: 8px 16px;
+	
+	align-items: center;
+	border-bottom: 1px solid #dddddd;
+}
+
+.user-detail-card__label {
+	flex-shrink: 0;
+	width: 112px;
+
+	display: flex;
+	align-items: center;
+
+	font-weight: 700;
+}
+
+.user-detail-card__title {
+	margin: 0;
+}
+
+.user-detail-card__content {
+	flex-grow: 1;
+}
+
+.user-detail-card__detail {
+	margin: 0;
+}

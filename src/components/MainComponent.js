@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Main from 'components/views/Main'
-import { UserForm } from 'components/views/User'
+import { UserForm, UserPage } from 'components/views/User'
 import Toolbar from 'components/molecules/Toolbar'
 import NotFound from 'components/views/NotFound'
 
@@ -26,7 +26,7 @@ export default function MainComponent() {
 					<Route exact path="/signout" component={Unimplemented} />
 					<Route exact path="/matching" component={Unimplemented} />
 					<Route exact path="/user/edit" component={UserForm} />
-					<Route exact path="/user/:id" component={Unimplemented} />
+					<Route exact path="/user/:id" component={UserPage} />
 					<Route exact path="/activity/add" component={Unimplemented} />
 					<Route exact path="/activity/list" component={Unimplemented} />
 					<Route exact path="/activity/report" component={Unimplemented} />

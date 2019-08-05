@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
 	_languages,
-	_language_option } from 'constants/List'
+	_language_level } from 'constants/List'
 
 const LanguageSelector = (props) => {
 	return (
@@ -14,10 +14,10 @@ const LanguageSelector = (props) => {
 					))
 				}
 			</select>
-			<select onChange={props.optionOnChange} value={props.optionValue}>
+			<select onChange={props.levelOnChange} value={props.levelValue}>
 				<option value=""> ----- </option>
 				{
-					_language_option.map(value => (
+					_language_level.map(value => (
 						<option key={value} value={value}> {value} </option>
 					))
 				}
@@ -31,7 +31,7 @@ export default class LanguagePicker extends Component {
 	constructor(props) {
 		super(props)
 		let _languages = (props.value.length === 0) 
-			? [{name: "", option: ""}] : props.value
+			? [{name: "", level: ""}] : props.value
 
 		this.state = {
 			languages: _languages 
@@ -41,7 +41,7 @@ export default class LanguagePicker extends Component {
 	onClickButton = (e) => {
 		e.preventDefault()
 		this.setState(prevState => {
-			return {languages: [...prevState.languages, {name: "", option: ""}]}
+			return {languages: [...prevState.languages, {name: "", level: ""}]}
 		})	
 	}
 
@@ -55,11 +55,11 @@ export default class LanguagePicker extends Component {
 		)
 	}
 
-	onChangeOption = (index) => (e) => {
-		let _option = e.target.value
+	onChangeLevel = (index) => (e) => {
+		let _level = e.target.value
 		this.setState(prevState => {
 			return {languages: prevState.languages.map((item, id) =>
-				(id === index) ? ({...item, option: _option}) : item
+				(id === index) ? ({...item, level: _level}) : item
 			)}
 		},
 			() => this.props.onChange(this.state.languages)
@@ -74,9 +74,9 @@ export default class LanguagePicker extends Component {
 						<LanguageSelector 
 							key={index} 
 							languageValue={this.state.languages[index].name}
-							optionValue={this.state.languages[index].option}
+							levelValue={this.state.languages[index].level}
 							languageOnChange={this.onChangeLanguage(index)}
-							optionOnChange={this.onChangeOption(index)}
+							levelOnChange={this.onChangeLevel(index)}
 						/>
 					))
 				}

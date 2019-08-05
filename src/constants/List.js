@@ -12,6 +12,4 @@ export const _gender = [ 'male', 'female' ]
 
 export const _gender_preference = [ 'both', 'male', 'female']
 
-export const _language_option = ['beginner', 'intermediate', 'advanced', 'fluent']
-
-
+export const _language_level = ['beginner', 'intermediate', 'advanced', 'fluent']

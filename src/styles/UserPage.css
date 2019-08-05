@@ -1,0 +1,9 @@
+.user-page-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.user-page {
+	width: 80%;
+}
