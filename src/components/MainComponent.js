@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Main from 'components/views/Main'
 import { UserList, UserForm, UserPage } from 'components/views/User'
-import { ActivityList, ActivityForm } from 'components/views/Activity'
+import { ActivityList, ActivityForm, ActivityPage } from 'components/views/Activity'
+import { ReportList, ReportForm, ReportPage } from 'components/views/Report'
 import Toolbar from 'components/molecules/Toolbar'
 import NotFound from 'components/views/NotFound'
 
