@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Main from 'components/views/Main'
-import { UserForm, UserPage } from 'components/views/User'
+import { UserList, UserForm, UserPage } from 'components/views/User'
+import { ActivityList, ActivityForm } from 'components/views/Activity'
 import Toolbar from 'components/molecules/Toolbar'
 import NotFound from 'components/views/NotFound'
 

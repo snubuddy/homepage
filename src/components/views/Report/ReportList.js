@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class ReportForm extends Component {
+class ReportList extends Component {
 	render() {
 		return (
 			<div> 
-				ReportForm
+				ReportList
 			</div>
 		)
 	}
 }
 
-export default ReportForm
+export default ReportList

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class ActivityForm extends Component {
+class ActivityDetail extends Component {
 	render() {
 		return (
 			<div>
-				ActivityForm
+				ActivityDetail
 			</div>
 		)
 	}
 }
 
-export default ActivityForm
+export default ActivityDetail

@@ -19,7 +19,8 @@ const _ex_user = {
 	gender_preference: 'both',
 	language: [ 
 		{name: 'Korean', level: 'fluent'},
-		{name: 'English', level: 'intermediate'}] 
+		{name: 'English', level: 'intermediate'}],
+	personal_buddy: []
 }
 
 class UserPage extends Component{
@@ -28,13 +29,24 @@ class UserPage extends Component{
 		return (
 			<div className="user-page-wrapper">
 				<div className="user-page">
-					<h1 className="user-page__title"> User detail </h1>
-					<UserDetail
-						user={_ex_user}
-						foriegner={false}
-					/>
-					<h1 className="user-page__title"> Matched Buddies </h1>
-					{this.props.match.params.id}
+					<div className="user-detail-wrapper">
+						<h1 className="user-page__title"> User detail </h1>
+						<UserDetail
+							user={_ex_user}
+							foriegner={false}
+						/>
+					</div>
+					<div className="user-detail-wrapper">
+						<h1 className="user-page__title"> Matched Buddies </h1>
+						{
+							_ex_user.personal_buddy.map(user => (
+								<UserDetail
+									user={user}
+									forienger={true}
+								/>
+							))
+						}
+					</div>
 				</div>
 			</div>
 		)
