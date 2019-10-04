@@ -12,7 +12,7 @@ import {
 	_gender, 
 	_gender_preference } from 'constants/List'
 
-import 'styles/UserForm.css'
+import 'styles/Layout.css'
 
 class UserForm extends Component{
 
@@ -39,8 +39,8 @@ class UserForm extends Component{
 
 	render() {
 		return (
-			<div className="user-form__wrapper">
-				<div className="user-form">
+			<div className="user-form__wrapper layout-wrapper">
+				<div className="user-form layout-content">
 					<form className="user-form__form">
 						<h1 className="user-form__title"> Edit user information </h1>
 						<FormInput 
@@ -79,6 +79,7 @@ class UserForm extends Component{
 							label="Birth"
 							className="user-form__formcontent"
 							content={(<DatePicker 
+								type="birth"
 								value={this.state.birth}
 								onChange={(value) => this.setState({birth: value})}
 							/>)}

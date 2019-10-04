@@ -46,8 +46,17 @@ class DatePicker extends Component {
 	}
 
 	generateYear = () => {
-		let baseYear = moment().year() - 35
-		return this.range(baseYear, 20).reverse()
+		if(this.props.type === "birth") {
+			let baseYear = moment().year() - 35
+			return this.range(baseYear, 20).reverse()
+		}
+		else if(this.props.type === "date") {
+			return [moment().year()]
+		}
+		else {
+			let baseYear = moment().year() - 10
+			return this.range(baseYear, 20).reverse()
+		}
 	}
 
 	generateMonth = () => {

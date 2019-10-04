@@ -29,7 +29,7 @@ export default function MainComponent() {
 					<Route exact path="/matching" component={Unimplemented} />
 					<Route exact path="/user/edit" component={UserForm} />
 					<Route exact path="/user/:id" component={UserPage} />
-					<Route exact path="/activity/add" component={Unimplemented} />
+					<Route exact path="/activity/add" component={ActivityForm} />
 					<Route exact path="/activity/list" component={Unimplemented} />
 					<Route exact path="/activity/report" component={Unimplemented} />
 					<Route exact path="/activity/report/add" component={Unimplemented} />

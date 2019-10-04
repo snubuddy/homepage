@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UserDetail from './UserDetail'
 
 import 'styles/UserPage.css'
+import 'styles/Layout.css'
 
 const _ex_user = {
 	first_name: 'Dongwoo',
@@ -27,8 +28,8 @@ class UserPage extends Component{
 
 	render() {
 		return (
-			<div className="user-page-wrapper">
-				<div className="user-page">
+			<div className="user-page-wrapper layout-wrapper">
+				<div className="user-page layout-content">
 					<div className="user-detail-wrapper">
 						<h1 className="user-page__title"> User detail </h1>
 						<UserDetail

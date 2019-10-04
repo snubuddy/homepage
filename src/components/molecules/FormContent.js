@@ -89,3 +89,26 @@ export const FormSelect = (props) => {
 		content: Select(props)
 	})
 }
+
+const Photo = (props) => {
+	return (
+		<div className="formcontent-photo">
+			<input
+				className="formcontent-photo__input"
+				type="file"
+				onChange={props.onChange} 
+			/>
+			<img
+				className="formcontent-photo__preview"
+				src={props.preview}
+				alt="Preview"
+			/>
+		</div>
+	)
+}
+
+export const FormPhoto = (props) => {
+	return FormContent({label: props.label,
+		content: Photo(props)
+	})
+}

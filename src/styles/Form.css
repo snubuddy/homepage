@@ -70,3 +70,17 @@
 
 	resize: vertical;
 }
+
+.formcontent-photo {
+	display: flex;
+	flex-direction: column;
+}
+
+.formcontent-photo__input {
+	font-size: 12px;
+}
+
+.formcontent-photo__preview {
+	width: 100%;
+}
+
